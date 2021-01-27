@@ -25,7 +25,7 @@ func main() {
 	)
 	flag.Parse()
 
-	startDate, err := time.Parse("2006-01-02", *start)
+	startDate, err := time.ParseInLocation("2006-01-02", *start, time.Local)
 	if err != nil {
 		fmt.Println("-startDate must be formatted as YYYY-MM-DD")
 		os.Exit(1)
